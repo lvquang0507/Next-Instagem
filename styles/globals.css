@@ -1,26 +1,71 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@layer base {
+    html {
+        @apply font-instagem;
+    }
+}
+@tailwind components;
+@tailwind utilities;
+
+.input-instagem {
+    @apply border-inputBorder rounded-[3px] px-2 py-[8px] placeholder:text-[12px] font-normal w-full border-[1px] outline-inputOutline;
+}
+.dash {
+    @apply h-[1px] leading-[18px] flex-grow flex-shrink bg-dash w-full relative top-[0.8em];
+}
+.color-bar {
+    -webkit-animation: 2s linear infinite RefreshedLoadingBarProgress,
+        0.5s ease-out LoadingBarEnter;
+    animation: 2s linear infinite RefreshedLoadingBarProgress,
+        0.5s ease-out LoadingBarEnter;
+    background: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        from(#ffd600),
+        color-stop(#ff7a00),
+        color-stop(#ff0169),
+        color-stop(#d300c5),
+        color-stop(#7638fa),
+        to(#ffd600)
+    );
+    background: -webkit-linear-gradient(
+        left,
+        #ffd600,
+        #ff7a00,
+        #ff0169,
+        #d300c5,
+        #7638fa,
+        #ffd600
+    );
+    background: linear-gradient(
+        to right,
+        #ffd600,
+        #ff7a00,
+        #ff0169,
+        #d300c5,
+        #7638fa,
+        #ffd600
+    );
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+@keyframes LoadingBarEnter {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+@keyframes RefreshedLoadingBarProgress {
+    0% {
+        background-position: 125% 0;
+    }
+    100% {
+        background-position: 0% 0;
+    }
 }
 
-* {
-  box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+.button-instagem {
+    @apply mx-10 my-2 bg-buttonActive text-white font-semibold text-sm w-[270px] px-[9px] py-[5px] rounded;
 }
