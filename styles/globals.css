@@ -7,12 +7,10 @@
 @tailwind components;
 @tailwind utilities;
 
-.input-instagem {
-    @apply border-inputBorder rounded-[3px] px-2 py-[8px] placeholder:text-[12px] font-normal w-full border-[1px] outline-inputOutline;
-}
 .dash {
     @apply h-[1px] leading-[18px] flex-grow flex-shrink bg-dash w-full relative top-[0.8em];
 }
+
 .color-bar {
     -webkit-animation: 2s linear infinite RefreshedLoadingBarProgress,
         0.5s ease-out LoadingBarEnter;
@@ -68,4 +66,20 @@
 
 .button-instagem {
     @apply mx-10 my-2 bg-buttonActive text-white font-semibold text-sm w-[270px] px-[9px] py-[5px] rounded;
+}
+
+.small-button {
+    @apply text-[14px] text-white px-[13px] border-[1px] border-transparent rounded py-[5px] font-semibold bg-buttonActive leading-[18px];
+}
+
+.input-instagem {
+    @apply border-inputBorder rounded-[3px] px-2 py-[7px] placeholder:text-[12px] font-normal w-full border-[1px] outline-inputOutline bg-250 leading-[18px];
+}
+
+.input-label {
+    @apply text-[12px] text-textGray h-9 absolute left-[9px] translate-y-[-12px] top-0 origin-bottom-left scale-[0.8333];
+}
+
+.input-instagem.active {
+    @apply !pt-[14px] !text-[12px];
 }
